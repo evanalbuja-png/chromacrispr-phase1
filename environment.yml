@@ -1,0 +1,38 @@
+name: chromacrispr-phase1
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+
+dependencies:
+  - python=3.10
+
+  # Core data / ML
+  - numpy
+  - pandas
+  - scikit-learn
+  - xgboost
+  - shap
+  - optuna
+  - h5py
+  - matplotlib
+  - seaborn
+  - jupyterlab
+
+  # Genomics / bioinformatics
+  - pybedtools
+  - pysam
+  - deeptools
+  - cooler
+  - hic2cool
+  - snakemake-minimal
+
+  # CLI tools (bioconda)
+  - bowtie2
+  - samtools
+  - bedtools
+
+  # pip-only dependency
+  - pip
+  - pip:
+      - pyBigWig

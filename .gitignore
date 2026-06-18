@@ -1,0 +1,21 @@
+# Environments
+chromacrispr-phase1/
+*.log
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Data (large files)
+data/raw/
+data/interim/
+
+# OS
+.DS_Store
+
+# Snakemake
+.snakemake/
