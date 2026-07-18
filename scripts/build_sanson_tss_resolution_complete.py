@@ -29,7 +29,7 @@ unresolved = unresolved[
     ~unresolved["guide_sequence"].isin(resolved_guides)
 ]
 
-unresolved["coordinate_source"] = "NONE"
+unresolved["coordinate_source"] = "unresolved_TSS_review"
 unresolved["guide_position"] = None
 unresolved["tss_position"] = None
 unresolved["offset"] = None
