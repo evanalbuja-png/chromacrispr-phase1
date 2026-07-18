@@ -19,3 +19,18 @@ data/interim/
 
 # Snakemake
 .snakemake/
+
+# Large bioinformatics datasets
+data/raw/
+data/processed/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Temporary files
+*.log
+.DS_Store
+
+# Literature
+Papers/
