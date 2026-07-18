@@ -1,0 +1,6 @@
+dataset_id	short_name	first_author	year	assay	cell_line	organism	publication_url	local_directory	status
+DS1	Horlbeck2016	Horlbeck	2016	CRISPRi	K562	Homo sapiens	https://elifesciences.org/articles/19760	data/raw/crispr_datasets/Horlbeck2016	pending
+DS2	Sanson2018	Sanson	2018	CRISPRi	K562	Homo sapiens	https://www.nature.com/articles/s41467-018-07901-8	data/raw/crispr_datasets/Sanson2018	pending
+DS3	Gasperini2019	Gasperini	2019	CRISPRi	K562	Homo sapiens	https://www.cell.com/cell/fulltext/S0092-8674(19)30012-0	data/raw/crispr_datasets/Gasperini2019	pending
+DS4	Replogle2022	Replogle	2022	Perturb-seq	K562	Homo sapiens	https://www.cell.com/cell/fulltext/S0092-8674(22)00506-3	data/raw/crispr_datasets/Replogle2022	pending
+DS5	Joung2017	Joung	2017	CRISPRa	K562	Homo sapiens	https://www.nature.com/articles/nmeth.4174	data/raw/crispr_datasets/Joung2017	pending
