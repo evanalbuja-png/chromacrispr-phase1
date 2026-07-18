@@ -65,3 +65,35 @@ Configuración:
 
 Esto completa el avance de SO1:
 Dataset curation and harmonization.
+
+## Week 4 - Unified sgRNA dataset QC (SO1)
+
+Completed dataset curation for CRISPR guide datasets DS1-DS4:
+
+- Horlbeck et al. 2016
+- Sanson et al. 2018
+- Gasperini et al. 2019
+- Replogle et al. 2022
+
+Pipeline implemented:
+
+- Dataset loading
+- Schema normalization
+- Sequence QC
+- Guide length validation
+- Duplicate handling
+- Dataset harmonization
+
+Final dataset:
+data/interim/sgRNA_unified.csv
+
+
+Statistics:
+
+- Total guides: 183,723
+- Experiments: 9
+- Genome builds: hg19/hg38
+- QC status: passed
+
+SO1 milestone:
+Dataset curation completed.
