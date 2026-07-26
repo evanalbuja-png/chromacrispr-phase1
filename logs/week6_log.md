@@ -141,3 +141,10 @@ Coverage:
 - Final guides: 155454
 - Guides with H3K4me3: 151170
 - Coverage: 97.244%
+
+
+## F3 H3K27me3 extraction
+- Matrix rows: 154371
+- Unique regions: 139150
+- Coverage: 99.277%
+- Duplicate region_id removed: 15221
