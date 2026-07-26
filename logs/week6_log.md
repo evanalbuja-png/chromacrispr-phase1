@@ -148,3 +148,11 @@ Coverage:
 - Unique regions: 139150
 - Coverage: 99.277%
 - Duplicate region_id removed: 15221
+
+
+## F3 H3K27me3 integration
+- Input: data/interim/features/sgRNA_with_f2_f3_full.csv
+- Output: data/interim/features/sgRNA_with_f2_f3_repressive.csv
+- Final guides: 155454
+- H3K27me3 matched guides: 154371
+- H3K27me3 coverage: 99.303%
