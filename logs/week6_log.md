@@ -83,3 +83,46 @@ Evaluated:
 
 Input:
 data/interim/features/sgRNA_with_f2.csv
+
+## Step 4 - F3 H3K27ac feature extraction
+
+Status: Completed
+
+Input:
+- data/interim/features/histones/H3K27ac_matrix.gz
+
+Parameters:
+- upstream/downstream: 500 bp
+- bin size: 10 bp
+- reference point: center
+
+Features extracted:
+- H3K27ac_mean
+- H3K27ac_max
+- H3K27ac_p90
+- H3K27ac_sum
+
+Output:
+- data/interim/features/f3_h3k27ac_features.csv
+
+QC:
+- Matrix regions processed: <reported by script>
+- Coverage: <reported by script>
+
+## H3K27ac integration (F3)
+
+Input:
+- sgRNA_with_f2.csv
+- f3_h3k27ac_features.csv
+
+Method:
+- region_id chr:start-end
+- 1-based to 0-based correction
+- pandas many_to_one merge
+
+Output:
+- data/interim/features/sgRNA_with_f2_f3.csv
+
+Coverage:
+- H3K27ac matched guides: <reported>
+- H3K27ac coverage: <reported>
