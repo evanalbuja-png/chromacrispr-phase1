@@ -97,3 +97,31 @@ Statistics:
 
 SO1 milestone:
 Dataset curation completed.
+
+
+# Semana 6 Status
+
+## Epigenomic feature integration completed
+
+Semana 6 completada.
+
+Features integradas:
+
+- F2:
+  - ATAC-seq K562
+
+- F3:
+  - H3K27ac
+  - H3K4me3
+  - H3K27me3
+
+Dataset final generado:
+
+data/interim/features/sgRNA_with_f2_f3_repressive.csv
+Coberturas:
+- ATAC: 99.711%
+- H3K27ac: 99.991%
+- H3K4me3: 97.244%
+- H3K27me3: 99.303%
+
+La integración fue realizada mediante `region_id` con corrección de coordenadas 1-based → 0-based y merges many-to-one.

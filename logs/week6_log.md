@@ -156,3 +156,138 @@ Coverage:
 - Final guides: 155454
 - H3K27me3 matched guides: 154371
 - H3K27me3 coverage: 99.303%
+
+
+# Semana 6 - Resumen ejecutivo final
+
+## Objetivo
+Integración de features epigenómicas F2 (ATAC-seq) y F3 (histone marks) para el dataset principal de sgRNA.
+
+## Features generadas
+
+### F2 - ATAC-seq K562
+Archivo:
+- `data/interim/features/f2_atac_features.csv`
+
+Características:
+- Ventana: ±500 bp
+- Bin size: 10 bp
+- Reference point: center
+- Features:
+  - ATAC_mean
+  - ATAC_max
+  - ATAC_p90
+  - ATAC_sum
+
+Cobertura:
+- 139731 regiones únicas
+- 99.69% respecto al BED único
+
+Decisión:
+- Se aceptó deduplicación por `region_id`.
+- Los duplicados (~10%) fueron documentados como comportamiento esperado de datasets sgRNA de alta densidad.
+
+---
+
+## Integración F2
+
+Archivo:
+- `data/interim/features/sgRNA_with_f2.csv`
+
+Cobertura final:
+- 155005 / 155454 guías
+- 99.711%
+
+Decisión:
+- Se corrigió discrepancia sistemática 1-based → 0-based.
+- Se utilizó relación many-to-one entre guías y regiones epigenómicas.
+
+---
+
+# F3 - Histonas
+
+## H3K27ac (marca activa)
+
+Archivo:
+- `data/interim/features/f3_h3k27ac_features.csv`
+
+Cobertura:
+- 140152 regiones únicas
+- 99.991%
+
+Integrado en:
+- `data/interim/features/sgRNA_with_f2_f3.csv`
+
+Cobertura:
+- 155440 / 155454
+- 99.991%
+
+---
+
+## H3K4me3 (promotores)
+
+Archivo:
+- `data/interim/features/f3_h3k4me3_features.csv`
+
+Cobertura:
+- 136211 regiones únicas
+
+Integrado en:
+- `data/interim/features/sgRNA_with_f2_f3_full.csv`
+
+Cobertura:
+- 151170 / 155454
+- 97.244%
+
+---
+
+## H3K27me3 (represiva)
+
+Archivo:
+- `data/interim/features/f3_h3k27me3_features.csv`
+
+Cobertura:
+- 139150 regiones únicas
+
+Integrado en:
+- `data/interim/features/sgRNA_with_f2_f3_repressive.csv`
+
+Cobertura:
+- 154371 / 155454
+- 99.303%
+
+---
+
+# Decisiones metodológicas
+
+- Se mantuvo `region_id = chr:start-end` como identificador principal.
+- Se aplicó corrección 1-based → 0-based para coordenadas provenientes del CSV de guías.
+- Los merges fueron realizados con validación `many_to_one`.
+- Las regiones sin match fueron conservadas con valores faltantes.
+- Los duplicados de regiones fueron eliminados manteniendo la primera ocurrencia.
+- Se evitó expandir el scope investigando duplicados de sgRNA.
+
+---
+
+# Commits principales Semana 6
+
+- `4c79b6a`
+  - Use region_id matching for F2 ATAC feature integration
+
+- `c7aba15`
+  - Fix 1-based to 0-based coordinate offset for F2 integration
+
+- `d446a7c`
+  - Integrate H3K27ac F3 features with F2 dataset
+
+- `bc01dd8`
+  - Integrate H3K4me3 F3 features with F2 F3 dataset
+
+- `88141e5`
+  - Extract F3 H3K27me3 histone repression features
+
+- `cd33bf7`
+  - Integrate H3K27me3 F3 repressive histone features
+
+## Estado:
+Semana 6 completada.
