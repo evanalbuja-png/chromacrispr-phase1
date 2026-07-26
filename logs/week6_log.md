@@ -133,3 +133,11 @@ Coverage:
 - Unique regions: 136211
 - Coverage: 97.180%
 - Duplicate region_id removed: 14959
+
+
+## H3K4me3 F3 integration
+- Input dataset: data/interim/features/sgRNA_with_f2_f3.csv
+- H3K4me3 regions: 136211
+- Final guides: 155454
+- Guides with H3K4me3: 151170
+- Coverage: 97.244%
