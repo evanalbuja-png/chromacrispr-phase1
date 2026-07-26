@@ -126,3 +126,10 @@ Output:
 Coverage:
 - H3K27ac matched guides: <reported>
 - H3K27ac coverage: <reported>
+
+
+## F3 H3K4me3 extraction
+- Matrix rows: 151170
+- Unique regions: 136211
+- Coverage: 97.180%
+- Duplicate region_id removed: 14959
