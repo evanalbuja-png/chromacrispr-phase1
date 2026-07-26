@@ -65,3 +65,21 @@ end = start + 1
 
 Result:
 F2 integration recalculated after coordinate normalization.
+
+## Week 6 - Step 3: F2 ATAC Feature QC
+
+Date: 2026-07-26
+
+Generated QC report:
+logs/f2_features_qc_report.md
+
+Evaluated:
+- ATAC_mean distribution
+- ATAC_max distribution
+- ATAC_p90 distribution
+- ATAC_sum distribution
+- Zero and low signal percentages
+- Dataset-stratified distributions
+
+Input:
+data/interim/features/sgRNA_with_f2.csv
