@@ -183,3 +183,69 @@ Multiple equally distant TSS assignments were resolved deterministically by keep
 
 F5.2 TSS context extraction completed successfully.
 Ready for F1 + F5 feature integration.
+
+## F1 + F5 Feature Integration Completed
+
+Date: 2026-08-02
+
+### Objective
+
+Integration of sequence features (F1) and genomic context features (F5) into the main CRISPR guide feature matrix.
+
+### Input datasets
+
+Base dataset:
+
+data/interim/features/sgRNA_with_f2_f3_repressive.csv
+
+Features integrated:
+
+F1:
+- data/interim/features/f1_sequence_features.csv
+
+F5 genomic context:
+- data/interim/features/f5_genomic_context_features.csv
+
+F5 TSS context:
+- data/interim/features/f5_tss_features.csv
+
+### Output
+
+Generated:
+
+data/interim/features/sgRNA_with_f1_f5.csv
+
+### Integration method
+
+All feature tables were integrated using a stable unique identifier:
+
+- sgrna_id
+
+The original row ordering was preserved for F1 and F5.1 features after validation.
+
+### Validation
+
+Expected rows:
+155454
+
+Final rows:
+155454
+
+Duplicate sgrna_id:
+0
+
+Missing values in critical integrated features:
+0
+
+Integrated feature groups:
+
+- F1 sequence features
+- F2 ATAC accessibility
+- F3 histone marks
+- F5 genomic context
+
+### Status
+
+F1 + F5 integration completed successfully.
+
+SO2 feature matrix expansion in progress.
