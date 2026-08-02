@@ -102,3 +102,84 @@ Missing values:
 Status:
 
 F1 Sequence Features completed.
+
+## F5.2 - TSS Genomic Context Features Completed
+
+Date: 2026-08-02
+
+### Objective
+Integration of genomic context features (F5) using GENCODE v49 TSS annotations.
+
+### Reference annotation
+
+- Genome build: hg38 / GRCh38
+- Annotation source: GENCODE v49
+- Input file:
+  - data/reference/hg38/gencode_v49_TSS.tsv
+- Total TSS annotations:
+  - 78,691
+
+### Methodology
+
+TSS proximity features were calculated using:
+
+- bedtools v2.31.1
+- bedtools closest -d
+
+sgRNA coordinates were converted to BED format using:
+
+- chromosome
+- start_0based
+- end_0based
+
+A unique identifier (`sgrna_id`) was introduced to preserve the original experimental records because `region_id` is not unique across the integrated CRISPR datasets.
+
+### Generated features
+
+Output:
+
+data/interim/features/f5_tss_features.csv
+
+Features:
+
+- sgrna_id
+- region_id
+- nearest_tss_gene
+- nearest_tss_strand
+- nearest_tss_distance
+- within_promoter_2kb
+
+Promoter definition:
+
+- ±2 kb around nearest TSS
+
+### Validation
+
+Input sgRNA records:
+
+155,454
+
+Output records:
+
+155,454
+
+Unique sgRNA IDs:
+
+155,454
+
+Missing records:
+
+0
+
+TSS ties detected:
+
+316
+
+Tie resolution:
+
+Multiple equally distant TSS assignments were resolved deterministically by keeping the first bedtools closest assignment.
+
+### Status
+
+F5.2 TSS context extraction completed successfully.
+Ready for F1 + F5 feature integration.
